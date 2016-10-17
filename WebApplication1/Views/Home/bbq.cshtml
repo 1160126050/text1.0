@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+    var a = 10.5;
+    var b = 20;
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <tilte>bbq</tilte>
+
+</head>
+<body>
+
+    <ul>
+        <li>@Html.ActionLink("主页", "Index", "Home")</li>
+        <li>@Html.ActionLink("关于", "About", "Home")</li>
+        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+        <li>@Html.ActionLink("bbq", "bbq", "Home")</li>
+    </ul>
+    <div>
+        <h1>bbq</h1>
+        <div>@(a+b)</div>
+        <div>@("TIME:" + DateTime.Now.ToString() )</div>
+    </div>
+    <ul>
+        @for (int i = 0; i < 10; i++)
+        {
+             <li>元素：@(i+1)</li>
+        }
+    </ul>
+</body>
+</html>
+
+
