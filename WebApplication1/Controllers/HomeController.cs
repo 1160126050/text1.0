@@ -32,6 +32,20 @@ namespace WebApplication1.Controllers
             return View();
 
         }
+        /// <summary>
+        /// 新闻列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult List()
+        {
+            string[] data = new string[] {"神十一与天宫对接成功 航天员“入宫”",
+                "深度：中国四年内已建造13艘052D舰 背后有3大玄机",
+                "深度：中国新武器3小时绕地球1圈 美要中方公开进展",
+                "油价上调在即 业界预计每吨300元 加一箱多15至20元"};
+
+            ViewBag.data = data;
+            return View();
+        }
 
         public ActionResult Contact()
         {
