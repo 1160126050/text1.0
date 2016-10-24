@@ -36,7 +36,7 @@ namespace WebApplication1.Controllers
         /// 新闻列表
         /// </summary>
         /// <returns></returns>
-        public ActionResult List()
+        public ActionResult List(int page=1)
         {
             string[] data = new string[] {"神十一与天宫对接成功 航天员“入宫”",
                 "深度：中国四年内已建造13艘052D舰 背后有3大玄机",
@@ -44,6 +44,7 @@ namespace WebApplication1.Controllers
                 "油价上调在即 业界预计每吨300元 加一箱多15至20元"};
 
             ViewBag.data = data;
+            ViewBag.Page = page;
             return View();
         }
 
