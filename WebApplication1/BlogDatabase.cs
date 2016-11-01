@@ -28,14 +28,55 @@
             var blogTable = modelBuilder.Entity<Blog>();
             var blogArtticleTable = modelBuilder.Entity<BlogArticle>();
             blogTable.HasKey(o => o.Id);
-            blogArtticTable.HasKey(o => o.Id);
+            blogArtticleTable.HasKey(o => o.Id);
             base.OnModelCreating(modelBuilder);
         }
     }
 
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+    /// <summary>
+    /// 博客
+    /// </summary>
+
+    public class Blog
+    {
+        /// <summary>
+        /// ID
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// 博客
+        /// </summary>
+        public string Title { get; set; }
+
+    }
+
+    /// <summary>
+    /// 博客文章
+    /// </summary>
+    public class BlogArticle
+    {
+        public int Id { get; set; }
+
+        public int BlogId { get; set; }
+
+        /// <summary>
+        /// 标题
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 文章内容
+        /// </summary>
+
+        public string Body { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+
+        public DateTime DateCreated { get; set; }
+    }
+
+
 }
