@@ -30,6 +30,11 @@ namespace WebApplication1.Controllers
 
         }
         //public ActionResult ArticleSave(string subject,string body)
+        /// <summary>
+        /// 添加文章使用modelbind
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public ActionResult ArticleSave(BlogArticle model)
         {
             if (ModelState.IsValid)
