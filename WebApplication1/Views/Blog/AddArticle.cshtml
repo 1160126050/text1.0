@@ -1,29 +1,34 @@
-﻿
+﻿@model BlogArticle
 @{
     ViewBag.Title = "AddArticle";
 }
 
 <h2>添加博客文章</h2>
-<form action="/Blog/ArticleSave" method="post">
-      <table class="table  table-bordered">
-          <tr>
-              <td>标题：</td>
-              <td><input type="text" name="Subject" /></td>
+@using (Html.BeginForm("ArticleSave", "Blog"))
+{
+    @Html.ValidationSummary()
+    <table class="table table-bordered">
+        <tr>
+            <td>标题：</td>
+            <td>
+                @Html.TextBoxFor(o =>o.Subject)
+                @Html.ValidationMessageFor(o=>o.Subject)
+            </td>
+        </tr>
+        <tr>
+            <td>内容</td>
+            <td>
+                @Html.TextAreaFor(o => o.Body,new {Styles="width:600px;max-width:1000px;" })
+                @Html.ValidationMessageFor(o => o.Body)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">保存</button>
+                <button type="reset" class="btn btn-warning">取消</button>
+            </td>
+        </tr>
 
-          </tr>
-          <tr>
-              <td>内容</td>
-              <td>
-                  <textarea name="Body" cols="60" rows="4"></textarea>
-              </td>
-          </tr>
-          <tr>
-              <td></td>
-              <td>
-                  <button type="sumit" class="btn btn-primary"> 保存</button>
-                  <button type="reset" class="btn btn-warning"> 取消</button>
-              </td>
-          </tr>
-      </table>
-</form>
-
+    </table>
+}
